@@ -1,0 +1,14 @@
+#不知道為什麼一直超時
+while True:
+  try:
+    z = int(input())
+    mylist = list(map(int,input().split()))
+    for i in range(len(mylist)-1):
+      for j in range(len(mylist)-1-i):
+        if mylist[j]%10 > mylist[j+1]%10:
+          mylist[j],mylist[j+1] = mylist[j+1],mylist[j]
+        elif mylist[j]%10 == mylist[j+1]%10 and mylist[j] < mylist[j+1]:
+          mylist[j],mylist[j+1] = mylist[j+1],mylist[j]
+    print(*mylist)
+  except:
+    break
