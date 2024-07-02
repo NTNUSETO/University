@@ -1,0 +1,18 @@
+while True:
+  try:
+    n = int(input())
+    mylist = list(map(int,input().split()))
+    mylist.sort()
+    best = [x for x in mylist if int(x) >= 60]
+    worst = [x for x in mylist if int(x) < 60]
+    print(*mylist)
+    if worst != []:
+      print(max(worst))
+    else:
+      print('best case')
+    if best != []:
+      print(min(best))
+    else:
+      print('worst case')
+  except:
+    break
