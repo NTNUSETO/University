@@ -1,0 +1,55 @@
+n = int(input())
+i = 1
+abcd = ['A','B','C','D','E','F','G','H','I','J',"K","L",'M','N','O','P','Q','R','S','T','U','V','W','X',"Y",'Z']
+while n != 0:
+  print('Test Case '+str(i)+':')
+  i += 1
+  mylist = []
+  for j in range(n):
+    mylist.append(input())
+  for j in range(n):
+    print(abcd[j]+': {'+mylist[j]+'}')
+  for j in range(n):
+    a = set(mylist[j])
+    for k in range(j+1,n):
+      b = set(mylist[k])
+      c = a.union(b)
+      c = list(c)
+      c.sort()
+      q = ""
+      for p in range(len(c)):
+        q = q + c[p]
+      print(abcd[j]+'+'+abcd[k]+": {"+q+"}")
+  for j in range(n):
+    a = set(mylist[j])
+    for k in range(j+1,n):
+      b = set(mylist[k])
+      d = a.intersection(b)
+      d = list(d)
+      d.sort()
+      q = ""
+      for p in range(len(d)):
+        q = q + d[p]
+      print(abcd[j]+'*'+abcd[k]+": {"+q+"}") 
+  for j in range(n):
+    a = set(mylist[j])
+    for k in range(n):
+      if j != k:
+        b = set(mylist[k])
+        e = a.difference(b)
+        e = list(e)
+        e.sort()
+        q = ""
+        for p in range(len(e)):
+          q = q+e[p]
+        print(abcd[j]+'-'+abcd[k]+": {"+q+"}") 
+  for j in range(n):
+    a = set(mylist[j])
+    for k in range(n):
+      if j != k:
+        b = set(mylist[k])
+        if a.issuperset(b) == True:
+          print(abcd[j]+" contains "+abcd[k])
+        else:
+          print(abcd[j]+" does not contain "+abcd[k])
+  n = int(input())
