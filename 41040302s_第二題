@@ -1,0 +1,43 @@
+import pandas as pd
+import datetime
+df = pd.read_csv("custom.csv", encoding="BIG5")
+format = '%Y/%m/%d'
+w = 0
+x = 0
+y = 0
+z = 0
+for i in range(28):
+  g = datetime.datetime.strptime(df['訂單日期'][i],format)
+  if g.strftime('%Y') == '2020':
+    w += df['訂單金額'][i]
+  elif g.strftime('%Y') == '2021':
+    x += df['訂單金額'][i]
+  elif g.strftime('%Y') == '2022':
+    y += df['訂單金額'][i]
+  else:
+    z += df['訂單金額'][i]
+a = 0
+b = 0
+c = 0
+for i in range(28):
+  if df['顧客ID'][i] == 'C001':
+    a += df['訂單金額'][i]
+  elif df['顧客ID'][i] == 'C002':
+    b += df['訂單金額'][i]
+  else:
+    c += df['訂單金額'][i]
+print('C001顧客的總訂單金額為:',a)
+print('\nC002顧客的總訂單金額為:',b)
+print('\nC003顧客的總訂單金額為:',c)
+if a == max(a,b,c):
+  print('\n總訂單金額最高的顧客是: C001')
+elif b == max(a,b,c):
+  print('\n總訂單金額最高的顧客是: C002')
+else:
+  print('\n總訂單金額最高的顧客是: C003')
+mostbuy = df['訂單金額'].idxmax()
+print('\n單筆訂單金額最高的顧客是:',df['顧客ID'][mostbuy])
+print("\n2020年總訂單金額為:",w)
+print("\n2021年總訂單金額為:",x)
+print("\n2022年總訂單金額為:",y)
+print("\n2023年總訂單金額為:",z)
