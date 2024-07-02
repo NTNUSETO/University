@@ -1,0 +1,15 @@
+l = []
+while True:
+  try:
+    n = int(input())
+    l = [*l,n]
+    l.sort()
+    a = len(l)
+    b = a-1
+    if a%2 == 1:
+      print(l[int(b/2)])
+    else:
+      c = l[int(a/2)] + l[int(a/2-1)]
+      print(int(c/2))
+  except:
+    break
