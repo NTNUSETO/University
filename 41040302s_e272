@@ -1,0 +1,17 @@
+import math
+def fib(n):
+  p = 1
+  q = 1
+  s = 1
+  if n>=3:
+    for i in range(2,n):
+      s = p + q
+      q = p
+      p = s
+  return s
+while True:
+  try:
+    a,b = map(int,input().split())
+    print(fib(math.gcd(a,b)))
+  except:
+    break
