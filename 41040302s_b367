@@ -1,0 +1,19 @@
+n = int(input())
+for i in range(n):
+  mylist = []
+  anslist = []
+  p,q = input().split()
+  p = int(p)
+  q = int(q)
+  i = 0
+  for i in range(p):
+    mylist.append(list(map(int,input().split())))
+  for i in range(p):
+    anslist.append(list(mylist[i]))
+  mylist.reverse()
+  for i in range(p):
+    mylist[i].reverse()
+  if mylist == anslist:
+    print('go forward')
+  else:
+    print('keep defending')
