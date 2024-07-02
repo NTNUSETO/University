@@ -1,0 +1,16 @@
+while True:
+  try:
+    list = []
+    str = input()
+    sum = 0
+    for j in range(len(str)-1):
+      list.append(str[j])
+    list.append(str[j+1])
+    for i in range(8):
+      j = 8-i
+      sum = sum + int(list[i])*j
+    sum = sum + int(list[8])
+    my_dict = {0:'BNZ',1:'CIP',2:'DOQ',3:'ER',4:'FS',5:'GT',6:'HU',7:'JVX',8:'KLY',9:'AMW'}
+    print(my_dict[sum%10])
+  except:
+    break
