@@ -1,0 +1,27 @@
+import pandas as pd
+df = pd.read_csv('scores.csv')
+col = ['Chinese','English','Math','Physics','Chemical']
+score = df[col].sum(axis = 1)
+ave = df[col].mean(axis = 1)
+df['Total'] = score
+df['Average'] = ave
+df = df.sort_values(by='Total',ascending = False)
+ranking = ['{:02d}'.format(i)for i in range(1,51)]
+df['Rank'] = ranking
+df = df.sort_values(by='Student ID',ascending = True)
+df.to_csv('new_scores.csv',index = False)
+new = pd.read_csv("new_scores.csv")
+print(new)
+mean = new[col].mean()
+med = new[col].median()
+std = new[col].std()
+print('\n各科平均值:')
+print(mean)
+print("\n各科標準差:")
+print(std)
+print("\n各科中位數:")
+print(med)
+over60 = df[col]>=60
+num60 = over60.sum()*2
+print("\n各科及格人數百分比:")
+print(num60)
