@@ -1,0 +1,10 @@
+def fuc(n):
+  if n == 1:
+    return 2
+  else:
+    return fuc(n-1) + 2*(n-1)
+while True:
+  try:
+    print(fuc(int(input())))
+  except:
+    break
