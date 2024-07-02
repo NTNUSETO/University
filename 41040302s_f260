@@ -1,0 +1,24 @@
+while True:
+  try:
+    N,M = map(int,input().split())
+    mylist = []
+    mylist.append(set(map(int,input().split())))
+    for i in range(M-1):
+      set1 = set(map(int,input().split()))
+      count = 0
+      for j in range(len(mylist)):
+        if set1.intersection(mylist[j]) != set():
+          mylist[j] = mylist[j].union(set1)
+          count = 1
+      if count == 0:
+        mylist.append(set1)
+    for i in range(N):
+      count = 0
+      for j in range(len(mylist)):
+        if i in mylist[j]:
+          count = 1
+      if count == 0: 
+        mylist.append({i})
+    print(len(mylist))
+  except:
+    break
