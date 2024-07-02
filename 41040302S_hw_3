@@ -1,0 +1,14 @@
+year = int(input("小華今年幾歲？"))
+if year<=0 or year>123:
+  print("你在鬧啊")
+else:
+  if 0<year and year<=5:
+    print("弟弟你這樣不用錢誒")
+  elif 5<year and year<=11:
+    print("那弟弟這邊跟你收590元喔")
+  elif 11<year and year<=17:
+    print("那同學這邊跟你收790元喔")
+  elif 17<year and year<=59:
+    print("那先生這邊跟你收890元喔")
+  else:
+    print("那伯伯我跟你收399元喔")
