@@ -1,0 +1,26 @@
+#我有詢問過助教，他說這題沒有多個測資
+a,b,c = input().split('/')
+a = int(a)
+b = int(b)
+c = int(c)
+if a%400 == 0:
+  year = '潤'
+elif a%4 == 0 and a%100 != 0:
+  year = '潤'
+else:
+  year = '平'
+i = 1
+sum = c
+while i<b:
+  if i%2==1:
+    sum = sum + 31
+    i = i+1
+  else:
+    sum = sum + 30
+    i = i+1
+if b>2:
+  if year == '潤':
+    sum = sum - 1
+  else:
+    sum = sum - 2
+print(sum)
