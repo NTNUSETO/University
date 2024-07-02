@@ -1,0 +1,14 @@
+while True:
+  try:
+    list = []
+    str = input()
+    for j in range(len(str)-1):
+      list.append(str[j])
+    list.append(str[j+1])
+    list != None
+    list.sort()
+    for i in range(len(list)-1):
+      print(list[i],end = "")
+    print(list[i+1])
+    aha = ord(list[0]) - 
+  except:
