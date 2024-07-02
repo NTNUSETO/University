@@ -1,0 +1,21 @@
+while True:
+  try:
+    a = list(map(int,input().split()))
+    b = list(map(int,input().split()))
+    a.sort()
+    b.sort()
+    if a == b:
+      print('A equals B')
+    else:
+      c = set(a)
+      d = set(b)
+      if c.issubset(d) == True:
+        print('A is a proper subset of B')
+      elif d.issubset(c) == True:
+        print('B is a proper subset of A')
+      elif c.intersection(d) != set():
+        print('I\'m confused!')
+      else:
+        print('A and B are disjoint')
+  except:
+    break
