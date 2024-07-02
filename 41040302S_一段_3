@@ -1,0 +1,31 @@
+#我有詢問過助教，他說這題有多個測資
+import math
+while True:
+  try:
+    mylist = input().split()
+    mean = 0
+    middle = 0
+    sum = 0
+    for i in range(len(mylist)):
+      mean = mean + int(mylist[i])
+    mean = mean/len(mylist)
+    if mean == int(mean):
+      mean = int(mean)
+    print(mean)
+    if len(mylist)%2 == 1:
+      middle = int(mylist[int((len(mylist)-1)/2)])
+    else:
+      middle = (int(mylist[int(len(mylist)/2)]) + int(mylist[int((len(mylist)/2)-1)]))/2
+      if middle == int(middle):
+        middle = int(middle)
+    print(middle)
+    print('我不會眾數')
+    for i in range(len(mylist)):
+      sum = sum + (int(mylist[i]) - mean)**2
+    sum = sum/len(mylist)
+    sigma = math.sqrt(sum)
+    if sigma == int(sigma):
+      sigma = int(sigma)
+    print(sigma)
+  except:
+    break
