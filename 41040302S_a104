@@ -1,0 +1,8 @@
+while True:
+  try:    
+    n = input()
+    mylist = list(map(int,input().split()))
+    mylist.sort()
+    print(*mylist)
+  except:
+    break
