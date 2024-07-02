@@ -1,0 +1,28 @@
+total = int(input("要做幾組資料？"))
+count = 1
+while count <= total:
+  m = str(count)
+  try:
+    a = int(input("起始數為："))
+    b = int(input("最末數為："))
+    sum = 0
+    if a%2 == 0:
+      if b%2 ==0:
+        for i in range(a+1,b,2):
+          sum = sum + i
+      else:
+        for i in range(a+1,b+1,2):
+          sum = sum + i
+    else:
+      if b%2 == 0:
+        for i in range(a,b,2):
+          sum = sum + i
+      else:
+        for i in range(a,b+1,2):
+          sum = sum + i
+    print("Case",m+":",sum)
+    sum = 0
+    count += 1
+  except:
+    break
+          
