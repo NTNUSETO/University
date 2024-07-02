@@ -1,0 +1,27 @@
+import math
+def gcd(m,n):
+  r = m%n
+  while r != 0:
+    m = n
+    n = r
+    r = m%n
+  return n
+c = int(input())
+while c != 0:
+  mylist = []
+  count = 0
+  pi = 0
+  allpossible = int(c*(c-1)/2)
+  for i in range(c):
+    mylist.append(int(input()))
+  for i in range(c-1):
+    j = i+1
+    for j in range(i+1,c):
+      if gcd(mylist[i],mylist[j]) == 1:
+        count = count + 1
+  if count == 0:
+    print('No estimate for this data set.')
+  else:
+    pi = math.sqrt(allpossible*6/count)
+    print(round(pi,6))
+  c = int(input())
